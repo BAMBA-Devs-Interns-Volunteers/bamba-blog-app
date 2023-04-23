@@ -74,7 +74,7 @@ const ptComponents = {
 
     return (
       <Format>
-    <section className='flex flex-col items-center justify-center mx-auto md:px-2 py-12 w-[78%]'>
+    <section className='flex flex-col items-center justify-center mx-auto md:px-2 py-12 w-[90%] lg:w-[78%]'>
 
     <div className='text-center'>
 
@@ -91,7 +91,7 @@ const ptComponents = {
       <div className="py-10">
        {mainImage && <img className="mx-auto" src={urlFor(mainImage).url() || "/"} loading="lazy" width={680} height={453.3}/>}
         </div>
-        <BlockContent className="justify-center w-[43rem] text-[1rem] lg:text-[20px]"
+        <BlockContent className="justify-center lg:w-[43rem] text-[1rem] lg:text-[20px]"
             blocks={body}
             serializers={serializers} 
             projectId="ek734hes"
