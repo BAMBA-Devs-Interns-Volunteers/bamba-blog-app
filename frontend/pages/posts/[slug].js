@@ -74,24 +74,24 @@ const ptComponents = {
 
     return (
       <Format>
-    <section className='container mx-auto md:px-2 py-16 '>
+    <section className='flex flex-col items-center justify-center mx-auto md:px-2 py-12 w-[78%]'>
 
-    <h2 className="text-3xl text-center pr-6">Author</h2>
-    <div className='flex justify-center'>
+    <div className='text-center'>
 
+      <h1 className='font-bold text-4xl text-center pb-5'>{title}</h1>
+    {/* <h2 className="text-3xl text-center pr-6">Author</h2>
       {authorImage && (
         
             <Author name={name} image={authorImage} />
-      )}
+      )} */}
 
     </div>
-    <div className="post py-10 mx-auto justify-center w-[90%]">
+    <div className="post py-10 mx-auto justify-center">
 
-      <h1 className='font-bold text-4xl text-center pb-5'>{title}</h1>
       <div className="py-10">
-       {mainImage && <img className="mx-auto" src={urlFor(mainImage).url() || "/"} loading="lazy" width={900} height={600}/>}
+       {mainImage && <img className="mx-auto" src={urlFor(mainImage).url() || "/"} loading="lazy" width={680} height={453.3}/>}
         </div>
-        <BlockContent className="justify-center text-[1rem] md:text-[1.3rem]"
+        <BlockContent className="justify-center w-[43rem] text-[1rem] lg:text-[20px]"
             blocks={body}
             serializers={serializers} 
             projectId="ek734hes"
@@ -100,9 +100,9 @@ const ptComponents = {
             imageOptions={{ w: 316, h: 240, fit: 'max' }} 
             
         />
-        </div>
-        <CommentForm postId={_id} post={post}/>
+        <CommentForm postId={_id} post={post} comments={post.comments}/>
         <CommentSection comments={post.comments} />
+        </div>
 
 
     </section>

@@ -1,6 +1,9 @@
-import { useState } from 'react'
+import { Container } from 'postcss'
+import { useEffect, useState } from 'react'
+import {FaComment} from "react-icons/fa"
+import {FiShare} from "react-icons/fi"
 
-export default function CommentForm({ postId }) {
+export default function CommentForm({ postId, comments }) {
 
   const [formData, setFormData] = useState({
     name: '',
@@ -9,6 +12,7 @@ export default function CommentForm({ postId }) {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [hasSubmitted, setHasSubmitted] = useState(false)
+  const [form, setForm] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -16,6 +20,10 @@ export default function CommentForm({ postId }) {
       ...prevState,
       [name]: value,
     }))
+  }
+
+  const showForm = ()=>{
+    setForm(!form)
   }
 
   const handleSubmit = async (e) => {
@@ -31,19 +39,45 @@ export default function CommentForm({ postId }) {
         postId,
       }),
     })
+
     setIsSubmitting(false)
     setHasSubmitted(true)
     setFormData({ name: '', email: '', comment: '' })
   }
 
+  setTimeout(()=>{
+    setHasSubmitted(false)
+  }, 3000)
+
+
+
+
   return (
-    <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
-      {hasSubmitted ? (
+    <div className="mt-28">
+
+    
+    <form onSubmit={handleSubmit} className="w-[20rem]">
+      {hasSubmitted ? 
         <p className="bg-green-100 text-green-800 px-4 py-2 rounded-md mb-4">
           Thank you for your comment!
         </p>
-      ) : (
-        <>
+      :""  
+      }
+    
+        <div className="form-display flex justify-between w-[20rem] py-3 px-3 mb-10 bg-slate-100 rounded-md">
+          <div className="flex items-center gap-x-2">
+          <FaComment className="text-[18px] "/> <span>{comments.length}</span>
+          </div>
+          <div className="pointer-events-auto">
+          
+
+            <FiShare onClick={showForm} className="text-[18px] pointer-events-auto" style={{pointerEvents: "auto"}}/ >
+        
+          </div>
+          </div>
+        {form ? (
+          <>
+
           <div className="mb-4">
             <label
               htmlFor="name"
@@ -96,13 +130,20 @@ export default function CommentForm({ postId }) {
           </div>
           <button
             type="submit"
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md shadow-sm disabled:bg-gray-400 disabled:cursor-not-allowed"
+            className="bg-[#8D75FD] hover:bg-purple-500 text-white px-4 py-2 rounded-md shadow-sm disabled:bg-gray-400 disabled:cursor-not-allowed"
             disabled={isSubmitting}
           >
             {isSubmitting ? 'Submitting...' : 'Submit'}
           </button>
-        </>
-      )}
+          </>
+        ) : (
+          <>
+          
+          </>
+        )}
+       
+      
     </form>
+    </div>
   )
 }

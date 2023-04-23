@@ -4,7 +4,7 @@ export default function CommentSection({ comments = [] }) {
   console.log(comments);
   return (
     <>
-      <h2 className="mt-10 mb-4 text-4xl leading-tight lg:text-6xl">
+      <h2 className="mt-10 mb-4 text-2xl leading-tight lg:text-5xl">
         Comments:
       </h2>
       <ul>
