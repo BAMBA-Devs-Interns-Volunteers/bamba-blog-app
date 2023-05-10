@@ -57,8 +57,6 @@ export default function CommentForm({ postId, comments, slug, title }) {
   }, 3000)
 
 
-
-
   return (
     <div className="mt-28">
 

@@ -1,4 +1,4 @@
-import groq from 'groq'
+
 import imageUrlBuilder from '@sanity/image-url'
 import Link from 'next/link'
 
@@ -128,7 +128,8 @@ const query = `*[_type == "post" && slug.current == $slug][0]
 _id, 
 _ref,
 name, 
-email, 
+email,
+_createdAt,
 comment, 
 }
 }`
