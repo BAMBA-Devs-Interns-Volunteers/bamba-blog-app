@@ -48,7 +48,7 @@ export default function CommentForm({ postId, comments, slug, title }) {
     })
 
     setIsSubmitting(false)
-    setHasSubmitted(true)
+    // setHasSubmitted(true)
     setFormData({ name: '', email: '', comment: '' })
   }
 
@@ -60,7 +60,6 @@ export default function CommentForm({ postId, comments, slug, title }) {
   return (
     <div className="mt-28">
 
-    
     <form onSubmit={handleSubmit} className="w-[20rem]">
       {hasSubmitted ? 
         <p className="bg-green-100 text-green-800 px-4 py-2 rounded-md mb-4">
@@ -70,13 +69,17 @@ export default function CommentForm({ postId, comments, slug, title }) {
       }
     
         <div className="form-display flex justify-between w-[20rem] py-3 px-3 mb-10 bg-slate-100 rounded-md">
+          <button>
+            
           <div className="flex items-center gap-x-2">
+        
           <FaComment onClick={showForm} className="text-[18px] text-slate-700"/> <span className="text-slate-500 text-[0.89rem]">{comments.length}</span>
           </div>
+          </button>
           <div className="pointer-events-auto">
           
 
-            <FiShare onClick={shareTwitter} className="text-[18px] pointer-events-auto" style={{pointerEvents: "auto"}}/ >
+            <FiShare onClick={shareTwitter} className="text-[18px] pointer-events-auto"/>
         
           </div>
           </div>

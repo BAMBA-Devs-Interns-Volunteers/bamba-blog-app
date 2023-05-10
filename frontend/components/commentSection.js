@@ -14,7 +14,7 @@ export default function CommentSection({ comments = [] }) {
             <h4 className="mb text-bold text-[1.2rem] leading-tight">
               <a href={`mailto:${email}`}>{name}</a> 
             </h4>
-              <p className="text-[0.9rem] text-slate-500">{moment(_createdAt).format("ddd mm yyy") }</p>
+              <p className="text-[0.9rem] text-slate-500">{moment(_createdAt).format("LL").toString() }</p>
             <p className="pt-4">{comment}</p>
             <hr className="mt-5 mb-5" />
           </li>

@@ -31,7 +31,7 @@ export default function author({ name, image, createdAt }) {
             {name || "No Name"}
           </p>
           <p className="text-[14px] text-slate-600 hover:text-gray-600">
-            { moment(createdAt).format("dd mm y") || "no date"}
+            { moment(createdAt).format("LL") || "no date"}
             
           </p>
       
