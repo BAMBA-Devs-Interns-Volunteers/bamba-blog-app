@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import {FaComment} from "react-icons/fa"
 import {FiShare} from "react-icons/fi"
 
-export default function CommentForm({ postId, comments }) {
+export default function CommentForm({ postId, comments, slug, title }) {
 
   const [formData, setFormData] = useState({
     name: '',
@@ -24,6 +24,13 @@ export default function CommentForm({ postId, comments }) {
 
   const showForm = ()=>{
     setForm(!form)
+  }
+
+  const url = <a href={`/posts/${slug}`}></a>
+  console.log(url);
+
+  const shareTwitter = ()=>{
+    window.open(`https://twitter.com/intent/tweet?text=${title}&url=${url}`, '_blank')
   }
 
   const handleSubmit = async (e) => {
@@ -66,12 +73,12 @@ export default function CommentForm({ postId, comments }) {
     
         <div className="form-display flex justify-between w-[20rem] py-3 px-3 mb-10 bg-slate-100 rounded-md">
           <div className="flex items-center gap-x-2">
-          <FaComment className="text-[18px] "/> <span>{comments.length}</span>
+          <FaComment onClick={showForm} className="text-[18px] text-slate-700"/> <span className="text-slate-500 text-[0.89rem]">{comments.length}</span>
           </div>
           <div className="pointer-events-auto">
           
 
-            <FiShare onClick={showForm} className="text-[18px] pointer-events-auto" style={{pointerEvents: "auto"}}/ >
+            <FiShare onClick={shareTwitter} className="text-[18px] pointer-events-auto" style={{pointerEvents: "auto"}}/ >
         
           </div>
           </div>

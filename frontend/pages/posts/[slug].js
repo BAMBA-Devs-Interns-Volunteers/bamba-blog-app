@@ -60,6 +60,7 @@ const ptComponents = {
       name = 'Missing name',
       authorImage,
       _id,
+      publishedAt,
       mainImage,
       body
     } = post
@@ -74,24 +75,25 @@ const ptComponents = {
 
     return (
       <Format>
-    <section className='flex flex-col items-center justify-center mx-auto md:px-2 py-12 w-[90%] lg:w-[78%]'>
+    <section className='items-left mx-auto md:px-2 py-12 w-[87%] lg:w-[60%]'>
 
-    <div className='text-center'>
+    <div className="">
+      <h1 className='font-bold text-4xl pb-5'>{title}</h1>
 
-      <h1 className='font-bold text-4xl text-center pb-5'>{title}</h1>
-    {/* <h2 className="text-3xl text-center pr-6">Author</h2>
+    {/* <h2 className="text-3xl text-center pr-6">Author</h2> */}
       {authorImage && (
         
-            <Author name={name} image={authorImage} />
-      )} */}
+            <Author name={name} image={authorImage} createdAt={publishedAt} />
+      )}
 
     </div>
-    <div className="post py-10 mx-auto justify-center">
+    <div className="post py-10 
+mx-auto justify-center">
 
-      <div className="py-10">
-       {mainImage && <img className="mx-auto" src={urlFor(mainImage).url() || "/"} loading="lazy" width={680} height={453.3}/>}
+      <div className="pb-11 w-full">
+       {mainImage && <img className="mx-auto w-full" src={urlFor(mainImage).url() || "/"} loading="lazy" width={680} height={453.3}/>}
         </div>
-        <BlockContent className="justify-center lg:w-[43rem] text-[1rem] lg:text-[20px]"
+        <BlockContent className=" text-[1.1rem] lg:text-[19px]"
             blocks={body}
             serializers={serializers} 
             projectId="ek734hes"
@@ -100,7 +102,7 @@ const ptComponents = {
             imageOptions={{ w: 316, h: 240, fit: 'max' }} 
             
         />
-        <CommentForm postId={_id} post={post} comments={post.comments}/>
+        <CommentForm postId={_id} post={post} comments={post.comments} title={title} />
         <CommentSection comments={post.comments} />
         </div>
 
@@ -118,6 +120,7 @@ const query = `*[_type == "post" && slug.current == $slug][0]
   "authorImage": author->image,
   body,
   _id,
+  publishedAt,
   'comments': *[
     _type == "comment" && 
     post._ref == ^._id 
@@ -127,7 +130,6 @@ _ref,
 name, 
 email, 
 comment, 
-_createdAt
 }
 }`
 

@@ -13,7 +13,7 @@ console.log("client data", client)
 export default async function createComment(req, res) {
   // console.log("Request body data",req);
   const { postId, name, email, comment } = req.body
-  console.log("Server received", postId, name, email, comment);
+  // console.log("Server received", postId, name, email, comment);
   try {
     await client.create({
       _type: 'comment',
