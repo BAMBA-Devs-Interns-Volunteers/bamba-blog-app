@@ -51,7 +51,7 @@ function Post( { postData } ){
 
 
     return (
-        <div className="item border-[2px] border-[#D2D2D2] rounded-[15px] overflow-hidden">
+        <div className="item border-[2px] border-[#D2D2D2] rounded-[15px] overflow-hidden mx-auto">
             <div className="images">
                 <Link
         href={`/posts/${slug.current}`}  ><img src={urlFor(mainImage).width(393).height(219).url() || "/"} alt={`${title}'s picture`} className="rounded" width={500} height={350} /></Link>
