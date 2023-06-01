@@ -1,4 +1,5 @@
 import sanityClient from '@sanity/client'
+// import { useRouter } from 'next/navigation';
 const config = {
     dataset: 'production',
     projectId: "ek734hes",
@@ -8,7 +9,6 @@ const config = {
 }
 const client = sanityClient(config)
 
-console.log("client data", client)
 
 export default async function createComment(req, res) {
   // console.log("Request body data",req);
@@ -29,5 +29,6 @@ export default async function createComment(req, res) {
     console.error(err)
     return res.status(500).json({ message: `Couldn't submit comment`, err })
   }
+  // router.refresh()
   return res.status(200).json({ message: 'Comment submitted' })
 }

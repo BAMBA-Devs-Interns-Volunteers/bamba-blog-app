@@ -1,9 +1,11 @@
-import { Container } from 'postcss'
 import { useEffect, useState } from 'react'
 import {FaComment} from "react-icons/fa"
 import {FiShare} from "react-icons/fi"
 
-export default function CommentForm({ postId, comments, slug, title }) {
+export default function CommentForm({ postId, comments, title }) {
+
+
+  
 
   const [formData, setFormData] = useState({
     name: '',
@@ -26,12 +28,7 @@ export default function CommentForm({ postId, comments, slug, title }) {
     setForm(!form)
   }
 
-  const url = <a href={`/posts/${slug}`}></a>
-  console.log(url);
 
-  const shareTwitter = ()=>{
-    window.open(`https://twitter.com/intent/tweet?text=${title}&url=${url}`, '_blank')
-  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -48,13 +45,13 @@ export default function CommentForm({ postId, comments, slug, title }) {
     })
 
     setIsSubmitting(false)
-    // setHasSubmitted(true)
     setFormData({ name: '', email: '', comment: '' })
+    setHasSubmitted(true)
   }
 
   setTimeout(()=>{
     setHasSubmitted(false)
-  }, 3000)
+  }, 7000)
 
 
   return (
@@ -79,7 +76,7 @@ export default function CommentForm({ postId, comments, slug, title }) {
           <div className="pointer-events-auto">
           
 
-            <FiShare onClick={shareTwitter} className="text-[18px] pointer-events-auto"/>
+            <FiShare  className="text-[18px] pointer-events-auto"/>
         
           </div>
           </div>
