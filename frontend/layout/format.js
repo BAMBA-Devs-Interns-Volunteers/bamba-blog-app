@@ -10,8 +10,8 @@ export default function format( { children}){
                 <title>Bamba community</title>
             </Head>
 
-            <Header posts={posts}></Header>
-            <main comment={comments}>{children}</main>
+            <Header ></Header>
+            <main >{children}</main>
             <Footer></Footer>
         </>
     )
