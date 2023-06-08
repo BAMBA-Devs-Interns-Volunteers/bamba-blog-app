@@ -7,7 +7,7 @@ export default function format( { children}){
     return (
         <>
             <Head>
-                <title>Bamba community</title>
+                <title>Bamba Community</title>
             </Head>
 
             <Header ></Header>
