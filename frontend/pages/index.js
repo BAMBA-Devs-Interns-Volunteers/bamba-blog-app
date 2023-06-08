@@ -14,7 +14,7 @@ import MostPopular from '../components/mostPopular';
 export default function Home({posts}) {
  
   return (
-   <Format posts={posts}>
+   <Format>
       <Hero></Hero>
       <Articles post={posts}></Articles>
       {/* <MostPopular></MostPopular> */}

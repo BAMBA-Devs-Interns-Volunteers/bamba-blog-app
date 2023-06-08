@@ -2,8 +2,7 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import Head from "next/head"
 
-export default function format( { children, posts }){
-    // const {posts} = children
+export default function format( { children, posts, comments }){
 
     return (
         <>
@@ -12,7 +11,7 @@ export default function format( { children, posts }){
             </Head>
 
             <Header posts={posts}></Header>
-            <main>{children}</main>
+            <main comment={comments}>{children}</main>
             <Footer></Footer>
         </>
     )

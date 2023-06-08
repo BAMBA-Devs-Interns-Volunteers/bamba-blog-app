@@ -3,7 +3,7 @@ import imageUrlBuilder from '@sanity/image-url'
 import Link from 'next/link'
 
 // import {PortableText} from '@portabletext/react'
-import {client} from '../../lib/client'
+import {client} from "../../lib/client"
 import Author from '../../components/_child/author'
 import Format from '../../layout/format'
 import { useRouter } from 'next/router'
@@ -52,8 +52,7 @@ const ptComponents = {
   
   
   const Post = ({post}) => {
-
-    console.log(post);
+    
     
     const {
       title = 'Missing title',
@@ -74,7 +73,7 @@ const ptComponents = {
 
 
     return (
-      <Format>
+      <Format comments={post.comments}>
     <section className='items-left mx-auto md:px-2 py-12 w-[87%] lg:w-[60%]'>
 
     <div className="">
@@ -96,8 +95,8 @@ mx-auto justify-center">
         <BlockContent className=" text-[1.1rem] lg:text-[19px]"
             blocks={body}
             serializers={serializers} 
-            projectId="ek734hes"
-            dataset="production"
+            projectId={process.env.NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID}
+            dataset={process.env.NEXT_PUBLIC_SANITY_STUDIO_DATA_SET}
             imageUrlBuilder={urlFor}
             imageOptions={{ w: 316, h: 240, fit: 'max' }} 
             

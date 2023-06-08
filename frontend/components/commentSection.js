@@ -1,7 +1,6 @@
 import moment from "moment";
 
 export default function CommentSection({ comments = [] }) {
-  console.log(comments);
   return (
     <>
       <h2 className="mt-10 mb-4 text-2xl leading-tight lg:text-5xl">
