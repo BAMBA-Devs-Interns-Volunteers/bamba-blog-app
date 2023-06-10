@@ -1,5 +1,5 @@
 export default function newslatter(){
-    return (
+  return (
         <section className="bg-gray-50 mt-20">
             
             <div className="container mx-auto md:px-20 py-16 text-center">
