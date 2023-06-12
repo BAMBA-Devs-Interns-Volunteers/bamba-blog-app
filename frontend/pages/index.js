@@ -16,7 +16,7 @@ export default function Home({posts}) {
   return (
    <Format>
       <Hero></Hero>
-      <Articles post={posts}></Articles>
+      <Articles posts={posts}></Articles>
       {/* <MostPopular></MostPopular> */}
    </Format>
   )

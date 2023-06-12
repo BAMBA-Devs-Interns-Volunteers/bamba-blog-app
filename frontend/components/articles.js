@@ -1,15 +1,31 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaComment } from "react-icons/fa";
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "../lib/client";
+import dynamic from "next/dynamic";
 
-export default function Articles({ post }) {
-  const [visiblePosts, setVisiblePosts] = useState(10);
+const INITIAL_VISIBLE_POSTS = 10;
 
-  const handleShowMore = () => {
-    setVisiblePosts(post.length);
-  };
+export default function Articles({ posts }) {
+  const [visiblePosts, setVisiblePosts] = useState(INITIAL_VISIBLE_POSTS);
+  const [isSSR, setIsSSR] = useState(true);
+
+useEffect(() => {
+	setIsSSR(false);
+}, []);
+
+
+
+
+    const handleShowMore = () => {
+      setVisiblePosts(posts.length);
+    }
+
+
+  if (!posts || posts.length === 0) {
+    return <p>No posts found.</p>;
+  }
 
   return (
     <section className="container mx-auto md:px-20 py-10">
@@ -20,24 +36,30 @@ export default function Articles({ post }) {
         </p>
       </div>
 
+    {!isSSR && 
+    
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-14">
-        {post.slice(0, visiblePosts).map((post, index) => (
-          <Post postData={post} key={index} />
+        {posts.slice(0, visiblePosts).map((post) => (
+        
+          
+            <Post postData={post} key={post._id} />
+          
         ))}
       </div>
-        <div className="flex items-center justify-center">
+    }
+  <div className="flex items-center justify-center">
 
-      {visiblePosts < post.length && (
+      {visiblePosts < posts.length && (
         <button onClick={handleShowMore} className="mt-4 font-bold border-[2px] border-blue-600 rounded-lg px-3 py-2 text-blue-800">
           Show More
         </button>
       )}
-        </div>
+  </div>
     </section>
   );
 }
 
-function Post({ postData }) {
+const Post = ({ postData })=>  {
   const { _id, title, publishedAt, slug = "", mainImage, author, body, comment } = postData;
 
   const urlFor = (source) => {
@@ -45,6 +67,7 @@ function Post({ postData }) {
   };
 
   return (
+
     <div className="item border-[2px] border-[#D2D2D2] rounded-[15px] overflow-hidden mx-auto">
       <div className="images">
         <Link href={`/posts/${slug.current}`}>
@@ -71,8 +94,7 @@ function Post({ postData }) {
           </Link>
           <p>
             <div className="flex items-center">
-              <FaComment />
-              {comment?.length && <small className="ml-1">{comment.length}</small>}
+              
             </div>
           </p>
         </div>

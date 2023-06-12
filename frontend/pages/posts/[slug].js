@@ -73,7 +73,7 @@ const ptComponents = {
 
 
     return (
-      <Format comments={post.comments}>
+      <Format>
     <section className='items-left mx-auto md:px-2 py-12 w-[87%] lg:w-[60%]'>
 
     <div className="">
@@ -135,7 +135,6 @@ comment,
 
 
 export async function getServerSideProps(context) {
-  // It's important to default the slug so that it doesn't return "undefined"
   const { slug = "" } = context.params
   const data = await client.fetch(query, { slug })
 
