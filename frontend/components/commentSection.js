@@ -4,7 +4,7 @@ export default function CommentSection({ comments = [] }) {
   return (
     <>
       <h2 className="mt-10 mb-4 text-2xl leading-tight lg:text-5xl">
-        Comments:
+        {Comment.length === "0" || null ? "No comments" : "Comments:"}
       </h2>
       <ul>
         {comments?.map(({ _id, _createdAt, name, email, comment }) => (
