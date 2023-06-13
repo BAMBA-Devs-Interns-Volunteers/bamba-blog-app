@@ -1,13 +1,5 @@
-import sanityClient from '@sanity/client'
-// import { useRouter } from 'next/navigation';
-const config = {
-    dataset: 'production',
-    projectId: "ek734hes",
-    apiVersion: '2021-10-21',
-    useCdn: true,
-    token: "skBKnnGPTJhdILSkL6pXmw8hbaHHwHd3WhZkNKwob9Tw0hPcIokWPQtZL2jigdmueMairYoMrJKiCv5DA6Scm02gBWYjRZYNVJ6N1AdqKtG6CriWAJHXMmPnhiashVwmdJMzgaBR98GxuBuHNbHmjEUBFAjV57YiywffRC4tkihy63e6krrK"
-}
-const client = sanityClient(config)
+import { client } from "../../lib/client"
+
 
 
 export default async function createComment(req, res) {

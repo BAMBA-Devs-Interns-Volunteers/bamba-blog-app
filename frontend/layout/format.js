@@ -2,17 +2,16 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import Head from "next/head"
 
-export default function format( { children, posts }){
-    // const {posts} = children
+export default function format( { children}){
 
     return (
         <>
             <Head>
-                <title>Bamba community</title>
+                <title>Bamba Community</title>
             </Head>
 
-            <Header posts={posts}></Header>
-            <main>{children}</main>
+            <Header ></Header>
+            <main >{children}</main>
             <Footer></Footer>
         </>
     )

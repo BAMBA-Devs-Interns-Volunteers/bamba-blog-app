@@ -14,6 +14,7 @@
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^3.3.0",
     "@sanity/image-url": "^1.0.1",
+    "dotenv": "^16.1.4",
     "groq": "^2.15.0",
     "moment": "^2.29.4",
     "next": "^12.1.6",

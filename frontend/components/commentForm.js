@@ -15,6 +15,7 @@ export default function CommentForm({ postId, comments, title }) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [hasSubmitted, setHasSubmitted] = useState(false)
   const [form, setForm] = useState(false)
+  const [err, setErr] = useState("")
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -24,35 +25,35 @@ export default function CommentForm({ postId, comments, title }) {
     }))
   }
 
-  const showForm = ()=>{
-    setForm(!form)
-  }
 
 
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
     setIsSubmitting(true)
-    const response = await fetch('/api/createComment', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        ...formData,
-        postId,
-      }),
-    })
+    try{
+      
+      const response = await fetch('/api/createComment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          postId: postId,
+        }),
+      })
+      setHasSubmitted(true)
+  
+      setIsSubmitting(false)
+      setFormData({ name: '', email: '', comment: '' })
+    } catch (err) {
+      setErr(err)
+    }
+    }
 
-    setIsSubmitting(false)
-    setFormData({ name: '', email: '', comment: '' })
-    setHasSubmitted(true)
-  }
-
-  setTimeout(()=>{
-    setHasSubmitted(false)
-  }, 7000)
-
+ 
 
   return (
     <div className="mt-28">
@@ -60,19 +61,19 @@ export default function CommentForm({ postId, comments, title }) {
     <form onSubmit={handleSubmit} className="w-[20rem]">
       {hasSubmitted ? 
         <p className="bg-green-100 text-green-800 px-4 py-2 rounded-md mb-4">
-          Thank you for your comment!
+          Comment Submitted!
         </p>
-      :""  
+      : err && <p className="bg-red-500 text-red-300 px-4 py-2 rounded-md mb-4">Failed to Submit</p>  
       }
     
         <div className="form-display flex justify-between w-[20rem] py-3 px-3 mb-10 bg-slate-100 rounded-md">
-          <button>
+    
             
           <div className="flex items-center gap-x-2">
         
-          <FaComment onClick={showForm} className="text-[18px] text-slate-700"/> <span className="text-slate-500 text-[0.89rem]">{comments.length}</span>
+          <FaComment className="text-[18px] text-slate-700"/> <span className="text-slate-500 text-[0.89rem]">{comments.length}</span>
           </div>
-          </button>
+          
           <div className="pointer-events-auto">
           
 
@@ -80,8 +81,7 @@ export default function CommentForm({ postId, comments, title }) {
         
           </div>
           </div>
-        {form ? (
-          <>
+        
 
           <div className="mb-4">
             <label
@@ -140,13 +140,7 @@ export default function CommentForm({ postId, comments, title }) {
           >
             {isSubmitting ? 'Submitting...' : 'Submit'}
           </button>
-          </>
-        ) : (
-          <>
-          
-          </>
-        )}
-       
+            
       
     </form>
     </div>

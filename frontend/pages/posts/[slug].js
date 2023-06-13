@@ -3,7 +3,7 @@ import imageUrlBuilder from '@sanity/image-url'
 import Link from 'next/link'
 
 // import {PortableText} from '@portabletext/react'
-import {client} from '../../lib/client'
+import {client} from "../../lib/client"
 import Author from '../../components/_child/author'
 import Format from '../../layout/format'
 import { useRouter } from 'next/router'
@@ -52,8 +52,7 @@ const ptComponents = {
   
   
   const Post = ({post}) => {
-
-    console.log(post);
+    
     
     const {
       title = 'Missing title',
@@ -96,8 +95,8 @@ mx-auto justify-center">
         <BlockContent className=" text-[1.1rem] lg:text-[19px]"
             blocks={body}
             serializers={serializers} 
-            projectId="ek734hes"
-            dataset="production"
+            projectId={process.env.NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID}
+            dataset={process.env.NEXT_PUBLIC_SANITY_STUDIO_DATA_SET}
             imageUrlBuilder={urlFor}
             imageOptions={{ w: 316, h: 240, fit: 'max' }} 
             
@@ -136,7 +135,6 @@ comment,
 
 
 export async function getServerSideProps(context) {
-  // It's important to default the slug so that it doesn't return "undefined"
   const { slug = "" } = context.params
   const data = await client.fetch(query, { slug })
 
