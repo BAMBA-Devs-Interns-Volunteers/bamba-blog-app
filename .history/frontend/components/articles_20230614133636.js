@@ -31,8 +31,8 @@ useEffect(() => {
     <section className="container mx-auto md:px-20 py-10">
       <div className="w-[21rem] md:w-[30rem] mx-auto">
         <h1 className="font-bold text-4xl text-center">Our Blog</h1>
-        <p className="pt-4 mb-8 text-center font:30">
-          Highlights About BAMBA
+        <p className="pt-4 mb-8">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam repellendus quo modi quis quaerat obcaecati qui
         </p>
       </div>
 

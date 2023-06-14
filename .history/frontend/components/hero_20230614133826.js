@@ -90,7 +90,7 @@ export default function hero() {
             <p className="my-5 text-sm text-gray-400">
               Amet proident aliquip voluptate do eiusmod sunt anim est enim labore sint pariatur commodo. Commodo pariatur aliquip quis amet est. Pariatur aliquip elit et eu duis ullamco commodo voluptate aliquip id do tempor Lorem deserunt.
             </p>
-            <p className="text-sm text-[#FDC006]">20 Jan, 2023</p>
+            <p className="text-sm text-[#FDC006]">20 Dec, 2020</p>
 
         </div>
 
