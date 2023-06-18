@@ -32,7 +32,7 @@ useEffect(() => {
       <div className="w-[21rem] md:w-[30rem] mx-auto">
         <h1 className="font-bold text-4xl text-center">Our Blog</h1>
         <p className="pt-4 mb-8">
-        Highlights about BAMBA.
+          Hightlights about BAMBA
         </p>
       </div>
 
