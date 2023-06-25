@@ -4,8 +4,8 @@ import Link from 'next/link'
 
 export default function footer() {
   return (
-    <footer className="bg-white-600 border-2 border-black-100 mt-20">
-      <div className=" mx-auto py-14 px-4 grid items-center justify-center lg:justify-center lg:grid-cols-3 gap-2 text-gray-300 ">
+    <footer className="bg-white-600 border-2 border-black-100 mt-20 px-4 flex flex-col items-center justify-center">
+      <div className=" mx-auto py-14  grid items-center justify-center gap-y-14 lg:justify-center lg:grid-cols-3 gap-2 text-gray-300 ">
         <div className="">
           <img className="w-35 bg-white mx-auto" src="../images/bamba-logo.png" alt="bamba-logo"/>
         </div>
@@ -25,7 +25,7 @@ export default function footer() {
        
       
       </div>
-      <p className="text-black flex items-center m-auto justify-center py-10 text-sm">Copyright ©2023-2024 All rights reserved | Bamba Global Community</p>
+      <p className="text-black px-11 lg:px-0 flex items-center m-auto justify-center py-10 text-sm">Copyright ©2023-2024 All rights reserved | Bamba Global Community</p>
     </footer>
   )
 }
