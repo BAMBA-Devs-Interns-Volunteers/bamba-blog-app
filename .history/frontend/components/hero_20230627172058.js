@@ -86,14 +86,11 @@ export default function hero() {
       <div className="flex md:flex-row flex-wrap">
         <div className="basis-[100%] md:basis-[50%] bg-[#0C2A45] text-white pt-12 pl-24 md:pl-12 lg:pl-24 pb-8 pr-16">
             <button  className="text-xs border-solid border-0 bg-[#3F69FF] py-2 px-3 rounded mb-10 md:mb-5"> FEATURED POST</button>
-            <h2 className="font-bold text-4xl">Learning is fun, Earning is Pun. </h2>
+            <h2 className="font-bold text-4xl">Learning is fun,Earning is Pun. </h2>
             <p className="my-5 text-sm text-gray-400">
-            Welcome to BAMBA, where learning meets fun and Pun! BAMBA is an exciting and vibrant community  dedicated to gaming, guizzes
-          and interactive educational sessions.
-          Join Our community today and discover new worlds,expand your knowledge,and connect with like-minded individuals who share passion
-          for both learning and fun.
+              Amet proident aliquip voluptate do eiusmod sunt anim est enim labore sint pariatur commodo. Commodo pariatur aliquip quis amet est. Pariatur aliquip elit et eu duis ullamco commodo voluptate aliquip id do tempor Lorem deserunt.
             </p>
-            <p className="text-sm text-[#FDC006]">20 Jan, 2023</p>
+            <p className="text-sm text-[#FDC006]">20 Dec, 2020</p>
 
         </div>
 
