@@ -12,7 +12,7 @@ export default function footer() {
    <div className="flex tracking-wider gap-x-8 items-center justify-center gap-y-8 mt-[-70px] md-width-[75%]">
         <Link target="" href=""><a><ImFacebook color="#000000" className="size-{20} hover:-translate-y-1.5  duration-300 hover:text-white-200" /></a></Link>
  <Link target="" href="https://twitter.com/BambaGlobal?s=20"><a><ImTwitter color="#000000" className=" size-{20} hover:-translate-y-1.5  duration-300 hover:text-white-200 "/></a></Link>
- <Link target="" href="https://www.linkedin.com/company/bamba-global/mycompany/"><a><ImLinkedin2 color="#000000" className="size-{20} hover:-translate-y-1.5  duration-300 hover:text-white-200" /></a></Link>
+ <Link target="" href=""><a><ImLinkedin2 color="#000000" className="size-{20} hover:-translate-y-1.5  duration-300 hover:text-white-200" /></a></Link>
  <Link target="" href=""><a><ImGooglePlus color="#000000"className="size-{20} hover:-translate-y-1.5  duration-300 hover:text-white-200" /></a></Link>
                
         </div>
