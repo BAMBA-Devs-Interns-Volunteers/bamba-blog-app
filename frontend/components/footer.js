@@ -9,11 +9,19 @@ export default function footer() {
         <div className="">
           <img className="w-35 bg-white mx-auto" src="../images/bamba-logo.png" alt="bamba-logo"/>
         </div>
+<<<<<<< HEAD
+   <div className="flex tracking-wider gap-x-8 items-center justify-center gap-y-8 mt-[-70px] md-width-[75%]">
+        <Link target="" href=""><a><ImFacebook color="#000000" className="size-{20} hover:-translate-y-1.5  duration-300 hover:text-white-200" /></a></Link>
+ <Link target="" href="https://twitter.com/BambaGlobal?s=20"><a><ImTwitter color="#000000" className=" size-{20} hover:-translate-y-1.5  duration-300 hover:text-white-200 "/></a></Link>
+ <Link target="" href="https://www.linkedin.com/company/bamba-global/mycompany/"><a><ImLinkedin2 color="#000000" className="size-{20} hover:-translate-y-1.5  duration-300 hover:text-white-200" /></a></Link>
+ <Link target="" href=""><a><ImGooglePlus color="#000000"className="size-{20} hover:-translate-y-1.5  duration-300 hover:text-white-200" /></a></Link>
+=======
    <div className="flex tracking-wider gap-x-8 justify-center">
         <Link target="" href="https://youtube.com/@bambatv6791"><a><ImYoutube color="#000000" className="size-{20} hover:-translate-y-1.5  duration-300 hover:text-white-200" /></a></Link>
  <Link target="" href="https://twitter.com/BambaGlobal?t=BlxYLcU39pi-OJ-NsTYzzQ&s=09"><a><ImTwitter color="#000000" className=" size-{20} hover:-translate-y-1.5  duration-300 hover:text-white-200 "/></a></Link>
  {/* <Link target="" href=""><a><ImLinkedin2 color="#000000" className="size-{20} hover:-translate-y-1.5  duration-300 hover:text-white-200" /></a></Link> */}
  <Link target="" href="https://instagram.com/bambaglobalofficial?igshid=YmMyMTA2M2Y="><a><ImInstagram color="#000000"className="size-{20} hover:-translate-y-1.5  duration-300 hover:text-white-200" /></a></Link>
+>>>>>>> 0f81597846ebdc610cf1d5b45fad1ca860d53936
                
         </div>
         <div className="flex items-center justify-between overflow-hidden px-2 w-56 h-12 bg-transparent border-2 rounded-[12px] border-gray-200 ">

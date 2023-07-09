@@ -31,13 +31,8 @@ useEffect(() => {
     <section className="container mx-auto md:px-20 py-10">
       <div className="w-[21rem] md:w-[30rem] mx-auto">
         <h1 className="font-bold text-4xl text-center">Our Blog</h1>
-<<<<<<< HEAD
         <p className="pt-4 mb-8 text-center font:30">
           Highlights About BAMBA
-=======
-        <p className="pt-4 mb-8">
-        WELCOME TO BAMBA (BLOCKCHAIN AMBASSADORS)
->>>>>>> 062f5280d3ebe341d7965aaeb46f7697738a6df9
         </p>
       </div>
 
